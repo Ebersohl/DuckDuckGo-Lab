@@ -69,4 +69,4 @@ print(pres_resps)
                                                 (pres_list[37]),
                                                 (pres_list[38])])
 def test_presidents(president_list_item):
-    assert president_list_item in pres_resps
+    assert president_list_item in pres_resps:
