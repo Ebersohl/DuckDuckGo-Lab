@@ -20,7 +20,15 @@ pres_list = ["Washington","Adams","Jefferson","Madison","Monroe","Jackson","Van 
 url_ddg = "https://api.duckduckgo.com"
 resp = requests.get(url_ddg + "/?q=presidents+of+the+united+states&format=json")
 rsp_data = resp.json()
+rt = rsp_data["RelatedTopics"]
 
+#Loop to put only text from related topics in a list 
+pres_resps = []
+for item in rt:
+    pres_resps.append(item['Text'])
+print(pres_resps)
+
+#Tests
 @pytest.mark.parametrize("president_list_item", [(pres_list[0]),
                                                 (pres_list[1]),
                                                 (pres_list[2]),
